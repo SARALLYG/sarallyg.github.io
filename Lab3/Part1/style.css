@@ -1,0 +1,14 @@
+body {
+  padding: 20px;
+  width: 500px;
+  background-colour: #efefef;
+  margin: 0 auto;
+}
+
+ul {
+  background-colour: white;
+  border: 5px solid purple;
+  padding: 30px;
+  border-radius: 20px;
+}
+ 
