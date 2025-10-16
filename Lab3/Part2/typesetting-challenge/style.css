@@ -1,3 +1,8 @@
+/* apply fonts to page */
+
+@import "https://fonts.googleapis.com/css2?family=Merriweather&family=Roboto+slab:wght@700&display=swap";
+
+
 /* General setup */
 
 * {
@@ -38,14 +43,42 @@ footer p {
 h1, h2 {
   font-family: 'Roboto Slab', serif;
   font-weight: 700;
-  color: #200;
+  color: #000;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
+
+h1 {
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 3px;
+}
+
 
 body {
   font-family: 'Merriweather', serif;
   font-size: 1rem;
   line-height: 1.6;
   color: #333;
+}
+
+p.indent {
+  text-indent: 2em;
+}
+
+p {
+  margin: 1.2rem 0;
+  line-height: 1.6;
+  letter-spacing: 0.5px;
+}
+
+a[href*="http"] {
+  padding-right: 16px;
+  background: url("external-link-52.png") no-repeat right center;
+  background-size: 14px 14px;
 }
 
 .nav ul {
@@ -60,18 +93,38 @@ body {
 
 .nav li a {
   text-decoration: none;
-  border: 1px solid #aa6666;
-  color: #aa6666;
+  border: 1px solid #8B4513;
+  color: #8B4513;
   padding: 0.5rem 1rem;
-  font-weight: bold;
+  font-weight: 700;
   text-align: center;
-  font-family: 'Robot Slab', serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-family: 'Roboto-Slab', serif;
   display: block;
+  background-color: transparent;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav li a: hover {
-  background-color: #aa6666;
+  background-color: #8B4513;
   color: white;
+}
+  
+
+a {
+  color: #a9746e;
+  text-decoration: underline;
+}
+
+a:focus,
+a:hover {
+  color: #5c4033;
+  text-decoration: none;
+}
+
+a:focus {
+  outline: none;
 }
   
 
