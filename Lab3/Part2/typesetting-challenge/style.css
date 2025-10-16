@@ -86,7 +86,7 @@ a[href*="http"] {
   flex-direction: column; 
   gap: 0.5rem;
   padding: 0;
-  margin-top: 2rem 0;
+  margin-top: 2rem;
   list-style: none;
 }
  
@@ -97,7 +97,7 @@ a[href*="http"] {
   color: #8B4513;
   padding: 0.5rem 1rem;
   font-weight: bold;
-  font size: 1.3rem;
+  font-size: 1.3rem;
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -108,9 +108,9 @@ a[href*="http"] {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.nav li a: hover {
+.nav li a:hover {
   background-color: #8B4513;
-  color: white;
+  color:white;
 }
   
 
