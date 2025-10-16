@@ -96,10 +96,12 @@ a[href*="http"] {
   border: 1px solid #8B4513;
   color: #8B4513;
   padding: 0.5rem 1rem;
-  font-weight: 700;
+  font-weight: bold;
+  font size: 1.3rem;
   text-align: center;
   letter-spacing: 1px;
   text-transform: uppercase;
+  line-height: 3.5;
   font-family: 'Roboto-Slab', serif;
   display: block;
   background-color: transparent;
