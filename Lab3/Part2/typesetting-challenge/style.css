@@ -48,15 +48,17 @@ body {
   color: #333;
 }
 
-.nav {
+.nav ul {
   display: flex;
   flex-direction: column; 
   gap: 0.5rem;
-  margin-top: 2rem;
+  padding: 0;
+  margin-top: 2rem 0;
+  list-style: none;
 }
  
 
-.nav a {
+.nav li a {
   text-decoration: none;
   border: 1px solid #aa6666;
   color: #aa6666;
@@ -64,9 +66,10 @@ body {
   font-weight: bold;
   text-align: center;
   font-family: 'Robot Slab', serif;
+  display: block;
 }
 
-.nav a: hover {
+.nav li a: hover {
   background-color: #aa6666;
   color: white;
 }
