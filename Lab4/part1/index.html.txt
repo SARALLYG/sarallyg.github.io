@@ -1,6 +1,24 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="utf-8"> 
+    <title>Random-Story-Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="story-generator.js" defer></script>
 
 
+<!--
+Name:Sarah Garama
+File:index.html
+Date:28 November 2025
+File Description:  Provides the user interface for the Random Story Generator app.
+Includes input for a custom name, local selection (US/UK), a button to generate a story,
+and a paragraph element to display the generated story.
+-->
 
+</head>
+
+    <body>
 
 
 <div>
