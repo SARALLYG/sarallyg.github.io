@@ -35,16 +35,20 @@ function returnRandomStoryString() {
 generateBtn.addEventListener("click", generateStory);
 
 function generateStory() {
+  let newStory = returnRandomStoryString()
   if (customName.value !== "") {
     const name = customName.value;
+    newStory = newStory.replace(/Bob/g, name);
   }
 
   if (document.getElementById("uk").checked) {
-    const weight = Math.round(300);
-    const temperature = Math.round(94);
+    const weight = Math.round(300 / 14) + "stone";
+    const temperature = Math.round((94 - 32) * 5/9) + "Celcius";
+    newStory = newStory.replace("300 pounds", weight);
+    newStory = newStory.replace("94 Fahrenheit", temperature);
   }
 
-  // TODO: replace "" with the correct expression
-  story.textContent = "";
+  // Display the story
+  story.textContent = newStory;
   story.style.visibility = "visible";
 }
