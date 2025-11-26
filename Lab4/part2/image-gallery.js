@@ -38,6 +38,16 @@ for (const image of images) {
   });
 }
 
+// 4. Function to update displayed image
+function updateDisplayedImage(imgElement) {
+  displayedImage.src = imgElement.src;
+  displayedImage.alt = imgElement.alt;
+}
+
+
+
+
+
 
 
 
