@@ -51,11 +51,11 @@ btn.addEventListener("click", () => {
   if (isDark) {
     btn.textContent = "Lighten";
     overlay.style.backgroundColor = "rgb(0 0 0 / 0.5)";
-    btn.classList.remove("dark");
+    
   } else {
     btn.textContent = "Darken";
     overlay.style.backgroundColor = "rgb(0 0 0 / 0)";
-    btn.classList.add("dark");
+    
   }
 
   // Toggle the class ready for the next button press
