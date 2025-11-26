@@ -13,4 +13,37 @@ const images = [
     { filename: "pic5.jpg", alt: "Large moth on a leaf" }
 ];
 
+// 2. Base URL for images
+const baseURL = "https://mdn.github.io/shared-assets/images/examples/learn/gallery/";
+
+// Loop through the images using a for...of loop and add an event listener to each thumbnail
+for (const image of images) {
+  const newImage = document.createElement("img");
+  newImage.setAttribute("src", baseURL + image.filename);
+  newImage.setAttribute("alt", image.alt);
+  newImage.setAttribute("tabindex", "0"); // make focusable by keyboard
+  thumbBar.appendChild(newImage);
+
+  // Update the display to show the image full size when a thumb is clicked 
+    newImage.addEventListener("click", () => {
+    updateDisplayedImage(newImage);
+
+    });
+
+      // Keyboard accessibility: Enter/Return key
+  newImage.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      updateDisplayedImage(newImage);
+    }
+  });
+}
+
+
+
+
+
+
+
+
+
 
