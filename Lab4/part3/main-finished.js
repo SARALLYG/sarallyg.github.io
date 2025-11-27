@@ -67,7 +67,7 @@ class Ball extends Shape {
 
   collisionDetect() {
     for (const ball of balls) {
-      if (!(this === ball)) {
+      if (this !== ball && ball.exists) {
         const dx = this.x - ball.x;
         const dy = this.y - ball.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
@@ -80,8 +80,21 @@ class Ball extends Shape {
   }
 }
 
-const balls = [];
+// 3. EvilCircle class extends Shape
+class EvilCircle extends Shape {
+  constructor(x, y, exists = true) {
+    super(x, y, 20, 20, exists); // fixed velocity
+    this.color = "white";
+    this.size = 20;
+  }
+}
 
+
+
+
+
+
+const balls = [];
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
