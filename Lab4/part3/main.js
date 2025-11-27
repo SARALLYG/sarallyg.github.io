@@ -42,11 +42,21 @@ class Ball {
     this.x += this.velX;
     this.y += this.velY;
   }
+
+  collisionDetect() {
+    for (const ball of balls) {
+      if (this !== ball) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.color = this.color = randomRGB();
+        }
+      }
+    }
+  }
 }
-
-// create a test ball
-const testBall = new Ball(50, 100, 4, 4, "blue", 10);
-
 
 // create an array to store balls and then populate it
 const balls = [];
@@ -54,21 +64,17 @@ const balls = [];
 while (balls.length < 25) {
   const size = random(10, 20);
   const ball = new Ball(
-    // ball position always drawn at least one ball width
-    // away from the edge of the canvas, to avoid drawing errors
-    random(0 + size, width - size),
-    random(0 + size, height - size),
+    random(size, width - size),
+    random(size, height - size),
     random(-7, 7),
     random(-7, 7),
     randomRGB(),
-    size,
+    size
   );
-
   balls.push(ball);
 }
 
-// updated loop to handle multiple balls
-
+// animation loop
 function loop() {
   ctx.fillStyle = "rgb(0 0 0 / 25%)";
   ctx.fillRect(0, 0, width, height);
@@ -76,6 +82,7 @@ function loop() {
   for (const ball of balls) {
     ball.draw();
     ball.update();
+    ball.collisionDetect();
   }
 
   requestAnimationFrame(loop);
