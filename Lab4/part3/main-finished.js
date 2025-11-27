@@ -36,15 +36,16 @@ class Ball extends Shape {
     this.color = color;
     this.size = size;
   }
+}
 
-  draw() {
+  draw() 
     ctx.beginPath();
     ctx.fillStyle = this.color;
     ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
     ctx.fill();
-  }
+  
 
-  update() {
+  update() 
     if (this.x + this.size >= width) {
       this.velX = -Math.abs(this.velX);
     }
@@ -63,9 +64,9 @@ class Ball extends Shape {
 
     this.x += this.velX;
     this.y += this.velY;
-  }
+  
 
-  collisionDetect() {
+  collisionDetect() 
     for (const ball of balls) {
       if (this !== ball && ball.exists) {
         const dx = this.x - ball.x;
@@ -77,8 +78,8 @@ class Ball extends Shape {
         }
       }
     }
-  }
-}
+  
+
 
 // 3. EvilCircle class extends Shape
 class EvilCircle extends Shape {
@@ -88,6 +89,60 @@ class EvilCircle extends Shape {
     this.size = 20;
   }
 }
+
+  draw() 
+    ctx.beginPath();
+    ctx.strokeStyle = this.color;
+    ctx.lineWidth = 3;
+    ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+    ctx.stroke();
+  
+  checkBounds() 
+    if (this.x + this.size >= width) this.x = width - this.size;
+    if (this.x - this.size <= 0) this.x = this.size;
+    if (this.y + this.size >= height) this.y = height - this.size;
+    if (this.y - this.size <= 0) this.y = this.size;
+  
+      setControls() 
+    window.addEventListener("keydown", (e) => {
+      switch (e.key) {
+        case "ArrowLeft":
+        case "a":
+          this.x -= this.velX;
+          break;
+        case "ArrowRight":
+        case "d":
+          this.x += this.velX;
+          break;
+        case "ArrowUp":
+        case "w":
+          this.y -= this.velY;
+          break;
+        case "ArrowDown":
+        case "s":
+          this.y += this.velY;
+          break;
+      }
+    });
+  
+  collisionDetect() 
+    for (const ball of balls) {
+      if (ball.exists) {
+        const dx = this.x - ball.x;
+        const dy = this.y - ball.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < this.size + ball.size) {
+          ball.exists = false;
+          score--;
+        }
+      }
+    }
+  }
+
+
+
+
 
 
 
