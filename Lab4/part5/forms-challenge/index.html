@@ -5,71 +5,125 @@
     <title>Forms challenge</title>
     <link href="style.css" rel="stylesheet" />
     <script defer src="index.js"></script>
+
+    <!--
+Name:Sarah Garama
+File:index.html
+Date:28 November2025
+File Description: Structuring a feedback form. To implement form controls,
+including text inputs, radio buttons, checkboxes, and a textarea.
+-->
+
   </head>
   <body>
-    We want your feedback!
-
-    We're very excited that you visited the little house in the woods,
+    <h1>We want your feedback!</h1>
+  <p>
+    We're very excited that you visited the <a href="#">little house in the woods</a>,
     and we want to hear what you thought of it! Please fill in the below
     sections. You don't need to provide your name or contact details, but
-    if you do, we'll enter you into a prize draw where you'll have a chance
+    if you do, we'll enter you into a <a href="#">prize draw</a> where you'll have a chance
     to win prizes.
 
-    --
+  </p>
 
-    Facilities
+  <img src="https://mdn.github.io/shared-assets/images/examples/learn/woodland-strip.jpg" alt="" />
 
-    Was the porridge
-    Too hot?
-    Too cold?
-    Just right?
+  <form>
+    
+    <div class="form-section">
+        <h2>Facilities</h2>
 
-    Were the beds
-    Too hard?
-    Too soft?
-    Just right?
+    <fieldset>
+    <legend>Was the porridge</legend>
+    <div class="separator">
+       <label><input type="radio" name="porridge" value="hot" checked> Too hot?</label>
+          </div>
+          <div class="separator">
+            <label><input type="radio" name="porridge" value="justright"> Just right?</label>
+          </div>
+        </fieldset>
 
-    Describe the chairs (select all you agree with)
-    Comfy
-    Luxurious
-    Hi tec
-    Pretty
-    Majestic
+        <fieldset>
+              <legend>Were the beds</legend>
+          <div class="separator">
+            <label><input type="radio" name="beds" value="hard" checked> Too hard?</label>
+          </div>
+          <div class="separator">
+            <label><input type="radio" name="beds" value="soft"> Too soft?</label>
+          </div>
+          <div class="separator">
+            <label><input type="radio" name="beds" value="justright"> Just right?</label>
+          </div>
+        </fieldset>
 
-    --
+        <fieldset>
+          <legend>Describe the chairs (select all you agree with)</legend>
+          <div class="separator">
+            <label><input type="checkbox" name="chairs" value="comfy"> Comfy</label>
+          </div>
+          <div class="separator">
+            <label><input type="checkbox" name="chairs" value="luxurious"> Luxurious</label>
+          </div>
+          <div class="separator">
+            <label><input type="checkbox" name="chairs" value="hitec"> Hi tec</label>
+          </div>
+          <div class="separator">
+            <label><input type="checkbox" name="chairs" value="pretty"> Pretty</label>
+          </div>
+          <div class="separator">
+            <label><input type="checkbox" name="chairs" value="majestic"> Majestic</label>
+          </div>
+        </fieldset>
+      </div>
 
-    About your hosts
+          <div class="form-section">
+        <h2>About your hosts</h2>
 
-    Who's your favorite bear?
-    Papa bear
-    Mama bear
-    Junior
-    Dozer
+        <div class="separator">
+          <label for="favoriteBear">Who's your favorite bear?</label>
+          <select id="favoriteBear" name="favoriteBear">
+            <option selected>Papa bear</option>
+            <option>Mama bear</option>
+            <option>Junior</option>
+            <option>Dozer</option>
+          </select>
+        </div>
 
-    Which greeting did you prefer?
-    Wave
-    Friendly greeting
-    Growl
-    Claw marks in the door
+         <div class="separator">
+          <label for="greeting">Which greeting did you prefer?</label>
+          <select id="greeting" name="greeting">
+            <option selected>Wave</option>
+            <option>Friendly greeting</option>
+            <option>Growl</option>
+            <option>Claw marks in the door</option>
+          </select>
+        </div>
+      </div>
 
-    --
+      <div class="form-section">
+        <h2>Any other feedback?</h2>
+        <label for="comments">Give us your comments</label><br>
+        <textarea id="comments" name="comments"></textarea>
+      </div>
 
-    Any other feedback?
+      <div class="form-section">
+        <h2>Your details</h2>
+        <div class="separator">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name">
+        </div>
+        <div class="separator">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+        <div class="separator">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+      </div>
 
-    Give us your comments
+      <button type="submit">Submit</button>
 
-    --
-
-    Your details
-
-    Name
-    Email
-    Phone
-
-    --
-
-    Submit
-
-    --
+    </form>
   </body>
 </html>
